@@ -1,4 +1,4 @@
-//Task 1- Create Employee Class with properties and methods
+//Task 1- Create Player Class with properties and methods
 class Player {
     constructor(name, salary, position, team) {
         this.name = name
@@ -7,14 +7,26 @@ class Player {
         this.team = team
     }
         getdetails() {
-            console.log(`${this.name} details are: 
-                Position: ${this.position},
-                Salary: ${this.salary}`)
+            console.log(`${this.name} details are: Position: ${this.position}, Salary: ${this.salary}`)
             }        
     
 }
 
-//Testing first class
-const employee1 = new Player ('Tiger', 70000, 'Left wing')
-console.log(employee1)
+//Task 2- Create Team to Manage Players and calculate salary
+class Team {
+    constructor(teamName, players) {
+        this.teamName = teamName
+        this.players = players;
+    }
+
+    addPlayer(player) {
+        this.players.push(player);
+    }
+
+    getTeamSalary() {
+        let totalTeamSalary = this.players.reduce((totalSalary, player) => totalSalary + player.salary, 0)
+        return (`The total Salary for ${this.teamName} is ${totalTeamSalary}`)
+    }
+}
+
 
