@@ -29,4 +29,12 @@ class Team {
     }
 }
 
+//Task 3- Create Manager Class with Inheritance from Employee
+class Coach extends Player {
+    constructor (name, salary, position, team, bonus) {
+        super(name, salary, position, team)
+        this.bonus = bonus;
+    }
+}
+
 
